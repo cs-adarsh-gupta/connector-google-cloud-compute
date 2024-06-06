@@ -2,791 +2,665 @@
   "type": "workflow_collections",
   "data": [
     {
+      "uuid": "74ec7d96-5fdc-4551-a594-f3db98802b0a",
       "@type": "WorkflowCollection",
-      "name": "Sample - Google Cloud Compute - 1.1.0",
-      "description": "Sample playbooks for \"Google Cloud Compute\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
-      "visible": true,
-      "image": "",
-      "uuid": "3e7e809d-762e-4002-ad68-0caf8c36f4e9",
-      "id": 184,
-      "deletedAt": null,
-      "importedBy": [],
-      "recordTags": [
-        "Google",
-        "google-cloud-compute"
-      ],
       "workflows": [
         {
           "@type": "Workflow",
-          "triggerLimit": null,
-          "name": "Get Instance Details",
-          "aliasName": null,
-          "tag": "#Google Cloud Compute",
-          "description": "Returns the specified Instance resource details.",
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "remoteExecutableFlag": false,
-          "parameters": [],
-          "synchronous": false,
-          "lastModifyDate": null,
-          "collection": "/api/3/workflow_collections/3e7e809d-762e-4002-ad68-0caf8c36f4e9",
-          "versions": [],
-          "triggerStep": "/api/3/workflow_steps/f4898765-fbf9-4bea-9315-feeb9387a363",
+          "uuid": "fdd9858f-14f7-495f-ad67-8746b599d1d3",
+          "collection": "/api/3/workflow_collections/74ec7d96-5fdc-4551-a594-f3db98802b0a",
           "steps": [
             {
-              "@type": "WorkflowStep",
-              "name": "Get Instance Details",
-              "description": null,
-              "arguments": {
-                "name": "Google Cloud Compute",
-                "config": "''",
-                "params": [],
-                "version": "1.1.0",
-                "connector": "google-cloud-compute",
-                "operation": "describe_instance",
-                "operationTitle": "Get Instance Details",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "status": null,
-              "top": "120",
-              "left": "188",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "group": null,
-              "uuid": "8d59dc77-dacd-466e-9036-a1b0eb8bb384"
-            },
-            {
+              "uuid": "7e3f5151-8ac1-4763-ae7b-d01eea4eb0df",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
+              "status": null,
               "arguments": {
-                "route": "48362d71-4140-4122-a0fe-2c1fd4eca07b",
-                "title": "Google Cloud Compute: Get Instance Details",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
                 "step_variables": {
                   "input": {
-                    "records": "{{vars.input.records[0]}}"
+                    "params": []
                   }
-                },
-                "executeButtonText": "Execute",
-                "noRecordExecution": true,
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "top": "20",
-              "left": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "group": null,
-              "uuid": "f4898765-fbf9-4bea-9315-feeb9387a363"
-            }
-          ],
-          "routes": [
-            {
-              "@type": "WorkflowRoute",
-              "name": "Start-> Get Instance Details",
-              "targetStep": "/api/3/workflow_steps/8d59dc77-dacd-466e-9036-a1b0eb8bb384",
-              "sourceStep": "/api/3/workflow_steps/f4898765-fbf9-4bea-9315-feeb9387a363",
-              "label": null,
-              "isExecuted": false,
-              "group": null,
-              "uuid": "1f012ff8-bcb2-48fb-9f6c-7eceec6575a6"
-            }
-          ],
-          "groups": [],
-          "priority": null,
-          "uuid": "15e6268f-0c6c-4018-b016-ce528944075d",
-          "id": 2444,
-          "owners": [],
-          "isPrivate": false,
-          "deletedAt": null,
-          "importedBy": [],
-          "recordTags": [
-            "Google",
-            "google-cloud-compute"
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "triggerLimit": null,
-          "name": "Start Instance",
-          "aliasName": null,
-          "tag": "#Google Cloud Compute",
-          "description": "Starts an instance that you have specified using the resource ID.",
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "remoteExecutableFlag": false,
-          "parameters": [],
-          "synchronous": false,
-          "lastModifyDate": null,
-          "collection": "/api/3/workflow_collections/3e7e809d-762e-4002-ad68-0caf8c36f4e9",
-          "versions": [],
-          "triggerStep": "/api/3/workflow_steps/60a304b2-192a-46ba-b03e-795dd5d84dc0",
-          "steps": [
-            {
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "arguments": {
-                "route": "16347ba2-fe20-4126-bd01-5ec9bdf23888",
-                "title": "Google Cloud Compute: Start Instance",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.input.records[0]}}"
-                  }
-                },
-                "executeButtonText": "Execute",
-                "noRecordExecution": true,
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "top": "20",
-              "left": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "group": null,
-              "uuid": "60a304b2-192a-46ba-b03e-795dd5d84dc0"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Start Instance",
-              "description": null,
-              "arguments": {
-                "name": "Google Cloud Compute",
-                "config": "''",
-                "params": [],
-                "version": "1.1.0",
-                "connector": "google-cloud-compute",
-                "operation": "start_instance",
-                "operationTitle": "Start Instance",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
                 }
               },
-              "status": null,
-              "top": "120",
-              "left": "188",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "group": null,
-              "uuid": "084af7ca-f244-40b2-a4e7-bd61407ab6a0"
-            }
-          ],
-          "routes": [
-            {
-              "@type": "WorkflowRoute",
-              "name": "Start-> Start Instance",
-              "targetStep": "/api/3/workflow_steps/084af7ca-f244-40b2-a4e7-bd61407ab6a0",
-              "sourceStep": "/api/3/workflow_steps/60a304b2-192a-46ba-b03e-795dd5d84dc0",
-              "label": null,
-              "isExecuted": false,
-              "group": null,
-              "uuid": "e0d50909-04e6-467a-a4a9-1ae33d761364"
-            }
-          ],
-          "groups": [],
-          "priority": null,
-          "uuid": "1f9b2ced-10bf-400c-bd83-35d7c26182ab",
-          "id": 2445,
-          "owners": [],
-          "isPrivate": false,
-          "deletedAt": null,
-          "importedBy": [],
-          "recordTags": [
-            "Google",
-            "google-cloud-compute"
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "triggerLimit": null,
-          "name": "Stop Instance",
-          "aliasName": null,
-          "tag": "#Google Cloud Compute",
-          "description": "Stops an instance that you have specified using the resource ID.",
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "remoteExecutableFlag": false,
-          "parameters": [],
-          "synchronous": false,
-          "lastModifyDate": null,
-          "collection": "/api/3/workflow_collections/3e7e809d-762e-4002-ad68-0caf8c36f4e9",
-          "versions": [],
-          "triggerStep": "/api/3/workflow_steps/b5690996-ab5b-4e83-9e14-db964838bef3",
-          "steps": [
-            {
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "arguments": {
-                "route": "b6804f6f-2681-4645-94ee-07097cc5523b",
-                "title": "Google Cloud Compute: Stop Instance",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.input.records[0]}}"
-                  }
-                },
-                "executeButtonText": "Execute",
-                "noRecordExecution": true,
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "top": "20",
               "left": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "group": null,
-              "uuid": "b5690996-ab5b-4e83-9e14-db964838bef3"
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
-              "@type": "WorkflowStep",
-              "name": "Stop Instance",
-              "description": null,
-              "arguments": {
-                "name": "Google Cloud Compute",
-                "config": "''",
-                "params": [],
-                "version": "1.1.0",
-                "connector": "google-cloud-compute",
-                "operation": "stop_instance",
-                "operationTitle": "Stop Instance",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "status": null,
-              "top": "120",
-              "left": "188",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "group": null,
-              "uuid": "83debecb-fe1d-4e89-ba56-22747222c2fe"
-            }
-          ],
-          "routes": [
-            {
-              "@type": "WorkflowRoute",
-              "name": "Start-> Stop Instance",
-              "targetStep": "/api/3/workflow_steps/83debecb-fe1d-4e89-ba56-22747222c2fe",
-              "sourceStep": "/api/3/workflow_steps/b5690996-ab5b-4e83-9e14-db964838bef3",
-              "label": null,
-              "isExecuted": false,
-              "group": null,
-              "uuid": "70bbc78a-f73b-46b9-a0e2-981faebedaaa"
-            }
-          ],
-          "groups": [],
-          "priority": null,
-          "uuid": "36e932e0-4741-4b9a-86ad-05c2b5ea7c00",
-          "id": 2446,
-          "owners": [],
-          "isPrivate": false,
-          "deletedAt": null,
-          "importedBy": [],
-          "recordTags": [
-            "Google",
-            "google-cloud-compute"
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "triggerLimit": null,
-          "name": "Delete Instance",
-          "aliasName": null,
-          "tag": "#Google Cloud Compute",
-          "description": "Deletes an instance resource that you have specified using the resource ID.",
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "remoteExecutableFlag": false,
-          "parameters": [],
-          "synchronous": false,
-          "lastModifyDate": null,
-          "collection": "/api/3/workflow_collections/3e7e809d-762e-4002-ad68-0caf8c36f4e9",
-          "versions": [],
-          "triggerStep": "/api/3/workflow_steps/795075f0-34f5-4251-9a4e-bd473b4e5453",
-          "steps": [
-            {
-              "@type": "WorkflowStep",
-              "name": "Delete Instance",
-              "description": null,
-              "arguments": {
-                "name": "Google Cloud Compute",
-                "config": "''",
-                "params": [],
-                "version": "1.1.0",
-                "connector": "google-cloud-compute",
-                "operation": "delete_instance",
-                "operationTitle": "Delete Instance",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "status": null,
-              "top": "120",
-              "left": "188",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "group": null,
-              "uuid": "d36335f0-4d3a-436b-9f69-872d49882c5d"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "arguments": {
-                "route": "56cebc36-5bf3-4c1f-968b-13c3faab00c8",
-                "title": "Google Cloud Compute: Delete Instance",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.input.records[0]}}"
-                  }
-                },
-                "executeButtonText": "Execute",
-                "noRecordExecution": true,
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "top": "20",
-              "left": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "group": null,
-              "uuid": "795075f0-34f5-4251-9a4e-bd473b4e5453"
-            }
-          ],
-          "routes": [
-            {
-              "@type": "WorkflowRoute",
-              "name": "Start-> Delete Instance",
-              "targetStep": "/api/3/workflow_steps/d36335f0-4d3a-436b-9f69-872d49882c5d",
-              "sourceStep": "/api/3/workflow_steps/795075f0-34f5-4251-9a4e-bd473b4e5453",
-              "label": null,
-              "isExecuted": false,
-              "group": null,
-              "uuid": "1ec39008-1e9b-45cf-ad61-55890c906d25"
-            }
-          ],
-          "groups": [],
-          "priority": null,
-          "uuid": "3a9c17eb-9f1e-414f-b538-85b11d696aee",
-          "id": 2447,
-          "owners": [],
-          "isPrivate": false,
-          "deletedAt": null,
-          "importedBy": [],
-          "recordTags": [
-            "Google",
-            "google-cloud-compute"
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "triggerLimit": null,
-          "name": "Reset Instance",
-          "aliasName": null,
-          "tag": "#Google Cloud Compute",
-          "description": "This is a hard reset the VM does not do a graceful shutdown. Performs a reset on the instance that you have specified using the resource ID.",
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "remoteExecutableFlag": false,
-          "parameters": [],
-          "synchronous": false,
-          "lastModifyDate": null,
-          "collection": "/api/3/workflow_collections/3e7e809d-762e-4002-ad68-0caf8c36f4e9",
-          "versions": [],
-          "triggerStep": "/api/3/workflow_steps/78cba0e3-ce89-4008-8b8a-369d35a88a0c",
-          "steps": [
-            {
-              "@type": "WorkflowStep",
-              "name": "Reset Instance",
-              "description": null,
-              "arguments": {
-                "name": "Google Cloud Compute",
-                "config": "''",
-                "params": [],
-                "version": "1.1.0",
-                "connector": "google-cloud-compute",
-                "operation": "reset_instance",
-                "operationTitle": "Reset Instance",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "status": null,
-              "top": "120",
-              "left": "188",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "group": null,
-              "uuid": "daf35401-4b88-49d1-8619-a64579e05057"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "arguments": {
-                "route": "ff4d4a53-5f18-45e3-b5ed-0d5afb13893a",
-                "title": "Google Cloud Compute: Reset Instance",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.input.records[0]}}"
-                  }
-                },
-                "executeButtonText": "Execute",
-                "noRecordExecution": true,
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "top": "20",
-              "left": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "group": null,
-              "uuid": "78cba0e3-ce89-4008-8b8a-369d35a88a0c"
-            }
-          ],
-          "routes": [
-            {
-              "@type": "WorkflowRoute",
-              "name": "Start-> Reset Instance",
-              "targetStep": "/api/3/workflow_steps/daf35401-4b88-49d1-8619-a64579e05057",
-              "sourceStep": "/api/3/workflow_steps/78cba0e3-ce89-4008-8b8a-369d35a88a0c",
-              "label": null,
-              "isExecuted": false,
-              "group": null,
-              "uuid": "e1e577e8-fcea-4480-97aa-32b5a0e2df3a"
-            }
-          ],
-          "groups": [],
-          "priority": null,
-          "uuid": "951ba6a1-3ee2-4047-9157-6f0d1955601b",
-          "id": 2448,
-          "owners": [],
-          "isPrivate": false,
-          "deletedAt": null,
-          "importedBy": [],
-          "recordTags": [
-            "Google",
-            "google-cloud-compute"
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "triggerLimit": null,
-          "name": "List Instances within Zone",
-          "aliasName": null,
-          "tag": "#Google Cloud Compute",
-          "description": "Retrieves the list of instances contained within the specified zone.",
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "remoteExecutableFlag": false,
-          "parameters": [],
-          "synchronous": false,
-          "lastModifyDate": null,
-          "collection": "/api/3/workflow_collections/3e7e809d-762e-4002-ad68-0caf8c36f4e9",
-          "versions": [],
-          "triggerStep": "/api/3/workflow_steps/00a2d928-f3dd-479b-91c4-c2a5002e1ced",
-          "steps": [
-            {
+              "uuid": "5c27cb4d-c678-446c-b872-89b3344c1c9e",
               "@type": "WorkflowStep",
               "name": "List Instances within Zone",
               "description": null,
+              "status": null,
               "arguments": {
                 "name": "Google Cloud Compute",
-                "config": "''",
-                "params": [],
-                "version": "1.1.0",
+                "config": "",
+                "params": {
+                  "zone": "",
+                  "filter": "",
+                  "order_by": "",
+                  "page_token": "",
+                  "max_results": ""
+                },
+                "version": "1.2.0",
                 "connector": "google-cloud-compute",
                 "operation": "list_instances_within_zone",
-                "operationTitle": "List Instances within Zone",
+                "operationTitle": "List Instances within Zone"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves the list of instances contained within the specified zone.",
+          "name": "List Instances within Zone",
+          "tag": "#Google Cloud Compute",
+          "recordTags": [
+            "Google",
+            "google-cloud-compute"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/7e3f5151-8ac1-4763-ae7b-d01eea4eb0df",
+          "routes": [
+            {
+              "uuid": "1e979252-d803-45dd-b596-ddad115944f1",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> List Instances within Zone",
+              "sourceStep": "/api/3/workflow_steps/7e3f5151-8ac1-4763-ae7b-d01eea4eb0df",
+              "targetStep": "/api/3/workflow_steps/5c27cb4d-c678-446c-b872-89b3344c1c9e"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "2d98d0ba-8151-46bb-8ed8-34ea94bc3c03",
+          "collection": "/api/3/workflow_collections/74ec7d96-5fdc-4551-a594-f3db98802b0a",
+          "steps": [
+            {
+              "uuid": "9ae71f9c-8961-46a1-bec6-99961e1e79bc",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
                 "step_variables": {
-                  "output_data": "{{vars.result}}"
+                  "input": {
+                    "params": []
+                  }
                 }
               },
-              "status": null,
-              "top": "120",
-              "left": "188",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "group": null,
-              "uuid": "0b96fbf6-1210-4d53-83f1-49248a39b3e9"
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
             },
             {
+              "uuid": "43c7c777-9a73-489b-ac22-ee0f17641279",
               "@type": "WorkflowStep",
-              "name": "Start",
+              "name": "Get Instance Details",
               "description": null,
-              "arguments": {
-                "route": "1a5cf4fc-9b83-4cf7-9808-a4d6027b8377",
-                "title": "Google Cloud Compute: List Instances within Zone",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.input.records[0]}}"
-                  }
-                },
-                "executeButtonText": "Execute",
-                "noRecordExecution": true,
-                "singleRecordExecution": false
-              },
               "status": null,
-              "top": "20",
-              "left": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "group": null,
-              "uuid": "00a2d928-f3dd-479b-91c4-c2a5002e1ced"
-            }
-          ],
-          "routes": [
-            {
-              "@type": "WorkflowRoute",
-              "name": "Start-> List Instances within Zone",
-              "targetStep": "/api/3/workflow_steps/0b96fbf6-1210-4d53-83f1-49248a39b3e9",
-              "sourceStep": "/api/3/workflow_steps/00a2d928-f3dd-479b-91c4-c2a5002e1ced",
-              "label": null,
-              "isExecuted": false,
-              "group": null,
-              "uuid": "c63979ae-8e6f-48b2-8904-4cae20f55581"
-            }
-          ],
-          "groups": [],
-          "priority": null,
-          "uuid": "afdcec4c-765a-468d-b2dc-647a8b610807",
-          "id": 2443,
-          "owners": [],
-          "isPrivate": false,
-          "deletedAt": null,
-          "importedBy": [],
-          "recordTags": [
-            "Google",
-            "google-cloud-compute"
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "triggerLimit": null,
-          "name": "Set Instance Label",
-          "aliasName": null,
-          "tag": "#Google Cloud Compute",
-          "description": "Set user defined labels on a Specified instance",
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "remoteExecutableFlag": false,
-          "parameters": [],
-          "synchronous": false,
-          "lastModifyDate": 1707991267,
-          "collection": "/api/3/workflow_collections/3e7e809d-762e-4002-ad68-0caf8c36f4e9",
-          "versions": [],
-          "triggerStep": "/api/3/workflow_steps/935d5c5c-0669-46fb-b98e-90fa975e294d",
-          "steps": [
-            {
-              "@type": "WorkflowStep",
-              "name": "Set Instance Label",
-              "description": null,
               "arguments": {
                 "name": "Google Cloud Compute",
-                "config": "test",
+                "config": "",
                 "params": {
-                  "zone": "us-west4-b",
-                  "new_key": "key",
-                  "new_value": "value",
-                  "instance_name": "Instance-name"
+                  "zone": "",
+                  "resource_id": ""
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "google-cloud-compute",
-                "operation": "set_label",
-                "operationTitle": "Set Instance Label",
-                "step_variables": []
+                "operation": "describe_instance",
+                "operationTitle": "Get Instance Details"
               },
-              "status": null,
-              "top": "120",
               "left": "188",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "group": null,
-              "uuid": "8598deb8-aea0-40ed-8ab6-1a7091d39d54"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "arguments": {
-                "route": "0a0bd332-bf2a-4a20-965d-36f9b793d702",
-                "title": "Google Cloud Compute: Set Instance Label",
-                "resources": [
-                  "alerts"
-                ],
-                "__triggerLimit": true,
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "params": [],
-                    "records": "{{vars.input.records}}"
-                  }
-                },
-                "triggerOnSource": true,
-                "executeButtonText": "Execute",
-                "noRecordExecution": true,
-                "showToasterMessage": {
-                  "visible": false,
-                  "messageVisible": true
-                },
-                "triggerOnReplicate": false,
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "top": "20",
-              "left": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "group": null,
-              "uuid": "935d5c5c-0669-46fb-b98e-90fa975e294d"
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
             }
           ],
-          "routes": [
-            {
-              "@type": "WorkflowRoute",
-              "name": "Start-> Stop Instance",
-              "targetStep": "/api/3/workflow_steps/8598deb8-aea0-40ed-8ab6-1a7091d39d54",
-              "sourceStep": "/api/3/workflow_steps/935d5c5c-0669-46fb-b98e-90fa975e294d",
-              "label": null,
-              "isExecuted": false,
-              "group": null,
-              "uuid": "2b017eb1-5d04-47ca-ad24-e84c6dda7cb1"
-            }
-          ],
-          "groups": [],
-          "priority": null,
-          "uuid": "bab832ed-254c-4d43-9eec-aab12a4d0424",
-          "id": 2450,
-          "owners": [],
-          "isPrivate": false,
-          "deletedAt": null,
-          "importedBy": [],
+          "triggerLimit": null,
+          "description": "Returns the specified Instance resource details.",
+          "name": "Get Instance Details",
+          "tag": "#Google Cloud Compute",
           "recordTags": [
             "Google",
             "google-cloud-compute"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/9ae71f9c-8961-46a1-bec6-99961e1e79bc",
+          "routes": [
+            {
+              "uuid": "6213482c-b3c7-4d7b-9640-f88e0ef55a9e",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Instance Details",
+              "sourceStep": "/api/3/workflow_steps/9ae71f9c-8961-46a1-bec6-99961e1e79bc",
+              "targetStep": "/api/3/workflow_steps/43c7c777-9a73-489b-ac22-ee0f17641279"
+            }
           ]
         },
         {
           "@type": "Workflow",
+          "uuid": "45862633-28c6-434c-ad5c-335724b82d01",
+          "collection": "/api/3/workflow_collections/74ec7d96-5fdc-4551-a594-f3db98802b0a",
+          "steps": [
+            {
+              "uuid": "587edf28-3a22-4652-9da0-cb9ba6a08beb",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "108557c8-4435-4a15-ad13-73dffb941351",
+              "@type": "WorkflowStep",
+              "name": "Start Instance",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Google Cloud Compute",
+                "config": "",
+                "params": {
+                  "zone": "",
+                  "resource_id": ""
+                },
+                "version": "1.2.0",
+                "connector": "google-cloud-compute",
+                "operation": "start_instance",
+                "operationTitle": "Start Instance"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
           "triggerLimit": null,
-          "name": "Aggregated List Instances",
-          "aliasName": null,
+          "description": "Starts an instance that you have specified using the resource ID.",
+          "name": "Start Instance",
           "tag": "#Google Cloud Compute",
-          "description": "Retrieves an aggregated list of all of the instances in your project across all regions and zones.",
+          "recordTags": [
+            "Google",
+            "google-cloud-compute"
+          ],
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,
-          "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": null,
-          "collection": "/api/3/workflow_collections/3e7e809d-762e-4002-ad68-0caf8c36f4e9",
-          "versions": [],
-          "triggerStep": "/api/3/workflow_steps/83fc42a6-025f-4799-be4a-9c4e0baebb5a",
+          "triggerStep": "/api/3/workflow_steps/587edf28-3a22-4652-9da0-cb9ba6a08beb",
+          "routes": [
+            {
+              "uuid": "52943368-f31d-4e01-81b0-405b7d263bee",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Start Instance",
+              "sourceStep": "/api/3/workflow_steps/587edf28-3a22-4652-9da0-cb9ba6a08beb",
+              "targetStep": "/api/3/workflow_steps/108557c8-4435-4a15-ad13-73dffb941351"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "b83a0308-7910-425e-b03b-911aba4db790",
+          "collection": "/api/3/workflow_collections/74ec7d96-5fdc-4551-a594-f3db98802b0a",
           "steps": [
             {
+              "uuid": "3c240c7a-ccd2-40dc-aae8-f5ac3fa9f38f",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "a7c43b4d-2f9a-4fec-b695-ac68f936da24",
+              "@type": "WorkflowStep",
+              "name": "Stop Instance",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Google Cloud Compute",
+                "config": "",
+                "params": {
+                  "zone": "",
+                  "resource_id": ""
+                },
+                "version": "1.2.0",
+                "connector": "google-cloud-compute",
+                "operation": "stop_instance",
+                "operationTitle": "Stop Instance"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Stops an instance that you have specified using the resource ID.",
+          "name": "Stop Instance",
+          "tag": "#Google Cloud Compute",
+          "recordTags": [
+            "Google",
+            "google-cloud-compute"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/3c240c7a-ccd2-40dc-aae8-f5ac3fa9f38f",
+          "routes": [
+            {
+              "uuid": "b6daf39e-97cd-49ce-a080-156d8161b9c6",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Stop Instance",
+              "sourceStep": "/api/3/workflow_steps/3c240c7a-ccd2-40dc-aae8-f5ac3fa9f38f",
+              "targetStep": "/api/3/workflow_steps/a7c43b4d-2f9a-4fec-b695-ac68f936da24"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "0b89dcb2-feac-4861-99cf-a429f84b46bf",
+          "collection": "/api/3/workflow_collections/74ec7d96-5fdc-4551-a594-f3db98802b0a",
+          "steps": [
+            {
+              "uuid": "40750ca5-589e-4ed9-82ee-84b26e95ab61",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "b5798805-5c10-4a3f-8627-8a59158c1cf0",
+              "@type": "WorkflowStep",
+              "name": "Delete Instance",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Google Cloud Compute",
+                "config": "",
+                "params": {
+                  "zone": "",
+                  "resource_id": ""
+                },
+                "version": "1.2.0",
+                "connector": "google-cloud-compute",
+                "operation": "delete_instance",
+                "operationTitle": "Delete Instance"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Deletes an instance resource that you have specified using the resource ID.",
+          "name": "Delete Instance",
+          "tag": "#Google Cloud Compute",
+          "recordTags": [
+            "Google",
+            "google-cloud-compute"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/40750ca5-589e-4ed9-82ee-84b26e95ab61",
+          "routes": [
+            {
+              "uuid": "2abc670e-0dee-4912-bc5a-93c8502f9baa",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Delete Instance",
+              "sourceStep": "/api/3/workflow_steps/40750ca5-589e-4ed9-82ee-84b26e95ab61",
+              "targetStep": "/api/3/workflow_steps/b5798805-5c10-4a3f-8627-8a59158c1cf0"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "f69c67a9-94ac-4093-a672-16b338937773",
+          "collection": "/api/3/workflow_collections/74ec7d96-5fdc-4551-a594-f3db98802b0a",
+          "steps": [
+            {
+              "uuid": "a02e39a5-e5f4-4af6-8f21-22cd1da6d6ca",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "4db28f75-ccde-43f7-a4b0-2fa5dd4c580f",
+              "@type": "WorkflowStep",
+              "name": "Reset Instance",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Google Cloud Compute",
+                "config": "",
+                "params": {
+                  "zone": "",
+                  "resource_id": ""
+                },
+                "version": "1.2.0",
+                "connector": "google-cloud-compute",
+                "operation": "reset_instance",
+                "operationTitle": "Reset Instance"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "This is a hard reset the VM does not do a graceful shutdown. Performs a reset on the instance that you have specified using the resource ID.",
+          "name": "Reset Instance",
+          "tag": "#Google Cloud Compute",
+          "recordTags": [
+            "Google",
+            "google-cloud-compute"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/a02e39a5-e5f4-4af6-8f21-22cd1da6d6ca",
+          "routes": [
+            {
+              "uuid": "ccf7e99b-dbe5-45a5-8851-e7d89c2f69b4",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Reset Instance",
+              "sourceStep": "/api/3/workflow_steps/a02e39a5-e5f4-4af6-8f21-22cd1da6d6ca",
+              "targetStep": "/api/3/workflow_steps/4db28f75-ccde-43f7-a4b0-2fa5dd4c580f"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "4648216a-42f3-4efb-82cc-2b87fd17aa6c",
+          "collection": "/api/3/workflow_collections/74ec7d96-5fdc-4551-a594-f3db98802b0a",
+          "steps": [
+            {
+              "uuid": "f4acd2b6-aefa-4d4d-a57f-63c6e23850c5",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "c5c3fc41-40dc-4f05-a906-3a3d5d2c4a9e",
               "@type": "WorkflowStep",
               "name": "Aggregated List Instances",
               "description": null,
+              "status": null,
               "arguments": {
                 "name": "Google Cloud Compute",
-                "config": "''",
+                "config": "",
                 "params": {
-                  "include_all_scopes": false,
-                  "return_partial_success": false
+                  "include_all_scopes": "",
+                  "filter": "",
+                  "order_by": "",
+                  "page_token": "",
+                  "max_results": "",
+                  "return_partial_success": ""
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "google-cloud-compute",
                 "operation": "get_aggregated_list_instances",
-                "operationTitle": "Aggregated List Instances",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
+                "operationTitle": "Aggregated List Instances"
               },
-              "status": null,
-              "top": "120",
               "left": "188",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "group": null,
-              "uuid": "42b8264b-fa5e-466c-9f98-cd95b0403e64"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "arguments": {
-                "route": "211bdb30-565d-463e-8318-6e0592b0ba0f",
-                "title": "Google Cloud Compute: Aggregated List Instances",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "records": "{{vars.input.records[0]}}"
-                  }
-                },
-                "executeButtonText": "Execute",
-                "noRecordExecution": true,
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "top": "20",
-              "left": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "group": null,
-              "uuid": "83fc42a6-025f-4799-be4a-9c4e0baebb5a"
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
             }
           ],
-          "routes": [
-            {
-              "@type": "WorkflowRoute",
-              "name": "Start-> Aggregated List Instances",
-              "targetStep": "/api/3/workflow_steps/42b8264b-fa5e-466c-9f98-cd95b0403e64",
-              "sourceStep": "/api/3/workflow_steps/83fc42a6-025f-4799-be4a-9c4e0baebb5a",
-              "label": null,
-              "isExecuted": false,
-              "group": null,
-              "uuid": "566d8c9b-4094-4fbb-a2c4-99fa365b3ddf"
-            }
-          ],
-          "groups": [],
-          "priority": null,
-          "uuid": "f3a932c4-8948-4bd1-9597-c46f8827e729",
-          "id": 2449,
-          "owners": [],
-          "isPrivate": false,
-          "deletedAt": null,
-          "importedBy": [],
+          "triggerLimit": null,
+          "description": "Retrieves an aggregated list of all of the instances in your project across all regions and zones.",
+          "name": "Aggregated List Instances",
+          "tag": "#Google Cloud Compute",
           "recordTags": [
             "Google",
             "google-cloud-compute"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/f4acd2b6-aefa-4d4d-a57f-63c6e23850c5",
+          "routes": [
+            {
+              "uuid": "36882d4f-4d07-466a-b302-61fd871f9c93",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Aggregated List Instances",
+              "sourceStep": "/api/3/workflow_steps/f4acd2b6-aefa-4d4d-a57f-63c6e23850c5",
+              "targetStep": "/api/3/workflow_steps/c5c3fc41-40dc-4f05-a906-3a3d5d2c4a9e"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "5dd9afca-bec8-461c-b2b6-8fcb78f222f1",
+          "collection": "/api/3/workflow_collections/74ec7d96-5fdc-4551-a594-f3db98802b0a",
+          "steps": [
+            {
+              "uuid": "a06a46fc-b1de-40f0-8f87-07940136472a",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "786689b0-04e0-47b9-86fe-53b32e5423a3",
+              "@type": "WorkflowStep",
+              "name": "Set Instance Label",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Google Cloud Compute",
+                "config": "",
+                "params": {
+                  "instance_name": "",
+                  "zone": "",
+                  "new_key": "",
+                  "new_value": ""
+                },
+                "version": "1.2.0",
+                "connector": "google-cloud-compute",
+                "operation": "set_label",
+                "operationTitle": "Set Instance Label"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Set user defined labels on a Specified instance",
+          "name": "Set Instance Label",
+          "tag": "#Google Cloud Compute",
+          "recordTags": [
+            "Google",
+            "google-cloud-compute"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/a06a46fc-b1de-40f0-8f87-07940136472a",
+          "routes": [
+            {
+              "uuid": "073daaa8-7fae-4579-b302-fcdc09eb3f0a",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Set Instance Label",
+              "sourceStep": "/api/3/workflow_steps/a06a46fc-b1de-40f0-8f87-07940136472a",
+              "targetStep": "/api/3/workflow_steps/786689b0-04e0-47b9-86fe-53b32e5423a3"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "9d08d0cf-6ac2-4851-a9e7-d56a6bdf918f",
+          "collection": "/api/3/workflow_collections/74ec7d96-5fdc-4551-a594-f3db98802b0a",
+          "steps": [
+            {
+              "uuid": "212aee2e-02bd-43ce-be8f-4eb0b811566d",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "3464c79a-439d-4688-9dd4-455f303d1dca",
+              "@type": "WorkflowStep",
+              "name": "Disk Snapshot",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Google Cloud Compute",
+                "config": "",
+                "params": {
+                  "zone": "",
+                  "instance_name": ""
+                },
+                "version": "1.2.0",
+                "connector": "google-cloud-compute",
+                "operation": "disk_snapshot",
+                "operationTitle": "Disk Snapshot"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "takes a snapshot of persistent disk",
+          "name": "Disk Snapshot",
+          "tag": "#Google Cloud Compute",
+          "recordTags": [
+            "Google",
+            "google-cloud-compute"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/212aee2e-02bd-43ce-be8f-4eb0b811566d",
+          "routes": [
+            {
+              "uuid": "e7cf68d1-66b2-42cc-9346-1ac00e669d17",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Disk Snapshot",
+              "sourceStep": "/api/3/workflow_steps/212aee2e-02bd-43ce-be8f-4eb0b811566d",
+              "targetStep": "/api/3/workflow_steps/3464c79a-439d-4688-9dd4-455f303d1dca"
+            }
           ]
         }
+      ],
+      "name": "Sample - Google Cloud Compute - 1.2.0",
+      "description": "Google Compute Engine's tooling and workflow supports to create advanced networks on the regional levels and load balancing capabilities in cloud computing. This connector facilitates automated operation related to GCE operations.",
+      "visible": true,
+      "recordTags": [
+        "Google",
+        "google-cloud-compute"
       ]
     }
-  ],
-  "exported_tags": [
-    "Google",
-    "google-cloud-compute"
   ]
 }

@@ -1,13 +1,13 @@
 {
   "name": "google-cloud-compute",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "label": "Google Cloud Compute",
   "description": "Google Compute Engine's tooling and workflow supports to create advanced networks on the regional levels and load balancing capabilities in cloud computing. This connector facilitates automated operation related to GCE operations.",
-  "publisher": "Fortinet CSE",
+  "publisher": "Fortinet",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "category": "Compute Platform",
-  "help_online": "https://github.com/fortinet-fortisoar/connector-google-cloud-compute/blob/release/1.1.0/docs/GoogleCloudComputeConnectorDoc.md",
+  "help_online": "https://github.com/fortinet-fortisoar/connector-google-cloud-compute/blob/release/1.2.0/docs/GoogleCloudComputeConnectorDoc.md",
   "cs_compatible": true,
   "cs_approved": false,
   "configuration": {
@@ -454,7 +454,7 @@
           "type": "text",
           "name": "page_token",
           "tooltip": "Specifies a page token to get that specified page of results.",
-          "description": "Specifies a page token to use."
+          "description": "Specifies a page token to get that specified page of results."
         },
         {
           "title": "Max Results",
@@ -561,6 +561,7 @@
               "required": true,
               "visible": true,
               "editable": true,
+              "description": "The name of the zone for this request.",
               "tooltip": "The name of the zone for this request."
           },
           {
@@ -570,7 +571,9 @@
               "required": true,
               "visible": true,
               "editable": true,
-              "tooltip": "The name of the instance for this request."
+              "tooltip": "The name of the instance for this request.",
+              "description": "The name of the instance for this request."
+
           }
       ],
       "output_schema": {
